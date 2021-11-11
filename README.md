@@ -1,38 +1,13 @@
-# create-svelte
+# Discord-ui
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+Discord-ui is a replica of the Discord interface written with :
 
-## Creating a project
+- **[Svelte](https://svelte.dev)**
+- **[SvelteKit](https://sveltekit.com)**
+- **[Tailwind](https://tailwindcss.com)**
 
-If you're seeing this, you've probably already done this step. Congrats!
+This project was created to learn Svelte and Tailwind. It is not meant to be a production-ready application.
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
+I may reuse it and change the content to transform it into an original portefolio, useful to demonstrate my skills and projects.
 
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
-
-```bash
-npm run build
-```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+The project is hosted on GitHub and the page can be viewed as a GitHub page [here](https://herbemalveillante.com)
