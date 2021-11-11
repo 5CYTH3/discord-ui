@@ -11,5 +11,6 @@
     </div>
 
 
-    <Category name="INFORMATION" channels={["rôles", "ressources"]}/>
+    <Category name="📌 INFO" channels={["roles", "ressources"]}/>
+    <Category name="🗣 GENERAL" channels={["french", "english"]}/>
 </div>
