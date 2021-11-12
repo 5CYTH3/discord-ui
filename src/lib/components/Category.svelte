@@ -1,5 +1,7 @@
 <script>
     import { tweened } from "svelte/motion";
+    import { linear } from "svelte/easing";
+    import { fly } from 'svelte/transition';
 
     let val = 90
 
@@ -39,7 +41,9 @@
     </span>
     <div class = "flex flex-col">
         {#if open}
-            <slot></slot>
+            <div transition:fly="{{y:-30, duration:400}}">
+                <slot></slot>
+            </div>
         {/if}
     </div>
 </div>
