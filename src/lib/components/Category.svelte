@@ -1,5 +1,6 @@
 <script>
     import { linear } from "svelte/easing";
+    import { fly } from 'svelte/transition';
     export let name;
     let open = true;
 
@@ -26,7 +27,9 @@
     </span>
     <div class = "flex flex-col">
         {#if open}
-            <slot></slot>
+            <div transition:fly="{{y:-30, duration:400}}">
+                <slot></slot>
+            </div>
         {/if}
     </div>
 </div>
