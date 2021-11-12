@@ -1,8 +1,8 @@
 <script>
-    import ChannelBar from "../components/ChannelBar.svelte";
-    import Chat from "../components/Chat.svelte";
-    import MemberBar from "../components/MemberBar.svelte";
-    import ServerBar from "../components/ServerBar.svelte";
+    import ChannelBar from "$lib/components/ChannelBar.svelte";
+    import Chat from "$lib/components/Chat.svelte";
+    // import MemberBar from "$lib/components/MemberBar.svelte";
+    import ServerBar from "$lib/components/ServerBar.svelte";
 </script>
 
 

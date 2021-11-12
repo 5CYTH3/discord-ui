@@ -22,6 +22,6 @@
     {#if type == 'icon' || type == 'image'}
         <img class="rounded-[2em] hover:rounded-2xl hover:bg-green transition-all" src="{filename}" alt="{tooltip}">
     {:else if type == 'text'}
-        <span class="flex items-center justify-center h-full">{value}</span>
+        <span class="relative top-1/2 left-1/2 justify-center h-full">{value}</span>
     {/if}
 </div>
