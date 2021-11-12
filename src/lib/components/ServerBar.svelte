@@ -20,7 +20,7 @@
         <ServerIcon value="https://pbs.twimg.com/profile_images/1444794309136502785/39GeJ97Q_400x400.jpg" type="image" tooltip="Skylanda"/>
         <ServerIcon value="https://pbs.twimg.com/profile_images/1080928807480147969/D3QyAya2_400x400.jpg" type="image" tooltip="SamSam"/>
 
-        <ServerIcon value="+" type="text" tooltip="Add a server"/>
-        <ServerIcon value="🧭" type="text" tooltip="Explore public servers"/>
+        <ServerIcon value="https://media.discordapp.net/attachments/899566962550640640/908731573212422174/plus.png" type="image" tooltip="Add a server"/>
+        <ServerIcon value="https://media.discordapp.net/attachments/899566962550640640/908732082023432242/compass.png" type="image" tooltip="Explore public servers"/>
     </div>
 </div>
