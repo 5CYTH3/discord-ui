@@ -2,6 +2,7 @@
     let messageInput = "";
 
     function emptyInput() {
+        window.location.href = `mailto:herbemalveillante@gmail.com?subject=Hey%20!%20👋&body=${messageInput}`
         messageInput = "";
         // send a mail ? That would be very cool
     }
