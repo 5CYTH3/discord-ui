@@ -4696,25 +4696,25 @@ var init_shims = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-565bb576.js
-var layout_565bb576_exports = {};
-__export(layout_565bb576_exports, {
+// .svelte-kit/output/server/chunks/__layout-dc317cfe.js
+var layout_dc317cfe_exports = {};
+__export(layout_dc317cfe_exports, {
   default: () => _layout
 });
 var _layout;
-var init_layout_565bb576 = __esm({
-  ".svelte-kit/output/server/chunks/__layout-565bb576.js"() {
+var init_layout_dc317cfe = __esm({
+  ".svelte-kit/output/server/chunks/__layout-dc317cfe.js"() {
     init_shims();
-    init_app_16d2d9c0();
+    init_app_d9509dc8();
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `${slots.default ? slots.default({}) : ``}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/error-ebe54579.js
-var error_ebe54579_exports = {};
-__export(error_ebe54579_exports, {
+// .svelte-kit/output/server/chunks/error-c73aeb82.js
+var error_c73aeb82_exports = {};
+__export(error_c73aeb82_exports, {
   default: () => Error2,
   load: () => load
 });
@@ -4722,10 +4722,10 @@ function load({ error: error2, status }) {
   return { props: { error: error2, status } };
 }
 var Error2;
-var init_error_ebe54579 = __esm({
-  ".svelte-kit/output/server/chunks/error-ebe54579.js"() {
+var init_error_c73aeb82 = __esm({
+  ".svelte-kit/output/server/chunks/error-c73aeb82.js"() {
     init_shims();
-    init_app_16d2d9c0();
+    init_app_d9509dc8();
     Error2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { status } = $$props;
       let { error: error2 } = $$props;
@@ -4745,21 +4745,24 @@ ${error2.stack ? `<pre>${escape(error2.stack)}</pre>` : ``}`;
   }
 });
 
-// .svelte-kit/output/server/chunks/index-68f806ce.js
-var index_68f806ce_exports = {};
-__export(index_68f806ce_exports, {
+// .svelte-kit/output/server/chunks/index-f94501f2.js
+var index_f94501f2_exports = {};
+__export(index_f94501f2_exports, {
   default: () => Routes
 });
 var Channel, Category, ChannelBar, Chat, ServerIcon, ServerBar, Routes;
-var init_index_68f806ce = __esm({
-  ".svelte-kit/output/server/chunks/index-68f806ce.js"() {
+var init_index_f94501f2 = __esm({
+  ".svelte-kit/output/server/chunks/index-f94501f2.js"() {
     init_shims();
-    init_app_16d2d9c0();
+    init_app_d9509dc8();
     Channel = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { name } = $$props;
+      let { type = "text" } = $$props;
       if ($$props.name === void 0 && $$bindings.name && name !== void 0)
         $$bindings.name(name);
-      return `<div class="${"ml-6 flex hover:bg-dark4 group p-2 rounded-lg group justify-between"}"><div class="${"flex justify-around"}"><svg class="${"w-6 h-6 mr-1.5"}" fill="${"none"}" stroke="${"currentColor"}" viewBox="${"0 0 24 24"}" xmlns="${"http://www.w3.org/2000/svg"}"><path strokelinecap="${"round"}" strokelinejoin="${"round"}"${add_attribute("strokewidth", 2, 0)} d="${"M7 20l4-16m2 16l4-16M6 9h14M4 15h14"}"></path></svg>
+      if ($$props.type === void 0 && $$bindings.type && type !== void 0)
+        $$bindings.type(type);
+      return `<div class="${"ml-6 flex hover:bg-dark4 group p-2 rounded-lg group justify-between"}"><div class="${"flex justify-around"}">${type == "text" ? `<svg class="${"w-6 h-6 mr-1.5"}" fill="${"none"}" stroke="${"currentColor"}" viewBox="${"0 0 24 24"}" xmlns="${"http://www.w3.org/2000/svg"}"><path strokelinecap="${"round"}" strokelinejoin="${"round"}"${add_attribute("strokewidth", 2, 0)} d="${"M7 20l4-16m2 16l4-16M6 9h14M4 15h14"}"></path></svg>` : `${type == "vocal" ? `<svg class="${"w-6 h-6 mr-1.5"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"}" cliprule="${"evenodd"}"></path></svg>` : ``}`}
         <p class="${"group-hover:text-white font-medium"}">${escape(name)}</p></div>
     <div class="${"flex flex-1 scale-0 group-hover:scale-100 text-white justify-end"}"><svg class="${"w-6 h-6"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"}"></path></svg></div></div>`;
     });
@@ -4772,21 +4775,39 @@ var init_index_68f806ce = __esm({
         $$bindings.channels(channels);
       return `<div class="${"text-darkgray font-bold"}"><span class="${"flex items-center m-3 hover:text-white"}">${`<svg class="${"w-4 h-4 mr-1"}" fill="${"none"}" stroke="${"currentColor"}" viewBox="${"0 0 24 24"}" xmlns="${"http://www.w3.org/2000/svg"}"><path strokelinecap="${"round"}" strokelinejoin="${"round"}"${add_attribute("strokewidth", 2, 0)} d="${"M19 9l-7 7-7-7"}"></path></svg>`}
         <span class="${"w-full"}">${escape(name)}</span></span>
-    <div class="${"flex flex-col"}">${`${each(channels, (channel) => `${validate_component(Channel, "Channel").$$render($$result, { name: channel }, {}, {})}`)}`}</div></div>`;
+    <div class="${"flex flex-col"}">${`${each(channels, (channel) => `${validate_component(Channel, "Channel").$$render($$result, { name: channel.name, type: channel.type }, {}, {})}`)}`}</div></div>`;
     });
     ChannelBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `<div class="${"flex-col bg-dark2 w-60 h-screen"}"><div class="${"flex h-14 w-full border-b-2 shadow-lg border-dark1 text-white items-center justify-between font-mono font-bold hover:bg-dark4 cursor-pointer"}"><div class="${"m-3"}"><span>HERBE MALVEILLANTE</span>
-            <span class="${"font-black text-2xl"}">\u2335</span></div></div>
+      return `<div class="${"flex flex-col bg-dark2 w-60 h-screen justify-between"}"><div><div class="${"flex h-14 w-full border-b-2 shadow-lg border-dark1 text-white items-center justify-between font-mono font-bold hover:bg-dark4 cursor-pointer"}"><div class="${"m-3"}"><span>HERBE MALVEILLANTE</span>
+                <span class="${"font-black text-2xl"}">\u2335</span></div></div>
 
 
-    ${validate_component(Category, "Category").$$render($$result, {
+        ${validate_component(Category, "Category").$$render($$result, {
         name: "\u{1F4CC} INFO",
-        channels: ["roles", "ressources"]
+        channels: [{ name: "roles", type: "text" }, { name: "info", type: "text" }]
       }, {}, {})}
-    ${validate_component(Category, "Category").$$render($$result, {
+        ${validate_component(Category, "Category").$$render($$result, {
         name: "\u{1F5E3} GENERAL",
-        channels: ["french", "english"]
-      }, {}, {})}</div>`;
+        channels: [
+          { name: "\u{1F1EB}\u{1F1F7} french", type: "text" },
+          { name: "\u{1F1EC}\u{1F1E7} english", type: "text" },
+          { name: "\u{1F4F7} media", type: "text" },
+          { name: "\u{1F50A} vocal", type: "vocal" },
+          { name: "\u{1F3B6} music", type: "vocal" }
+        ]
+      }, {}, {})}
+        ${validate_component(Category, "Category").$$render($$result, {
+        name: "\u{1F4BB} development",
+        channels: [
+          { name: "\u{1F4E6} packages", type: "text" },
+          { name: "html-css", type: "text" },
+          { name: "javascript", type: "text" },
+          { name: "python", type: "text" }
+        ]
+      }, {}, {})}</div>
+
+    <div class="${"flex h-auto w-full bg-dark1_5"}"><div class="${"m-3"}"><span>HERBE MALVEILLANTE</span>
+            <span class="${"font-black text-2xl"}">\u2335</span></div></div></div>`;
     });
     Chat = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `<div class="${"flex flex-1 h-screen bg-dark3 text-white items-center justify-center"}">Chat
@@ -4885,7 +4906,7 @@ var init_index_68f806ce = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/app-16d2d9c0.js
+// .svelte-kit/output/server/chunks/app-d9509dc8.js
 function get_single_valued_header(headers, key) {
   const value = headers[key];
   if (Array.isArray(value)) {
@@ -6163,9 +6184,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-963c5836.js",
+      file: assets + "/_app/start-f51f681a.js",
       css: [assets + "/_app/assets/start-464e9d0a.css"],
-      js: [assets + "/_app/start-963c5836.js", assets + "/_app/chunks/vendor-4fa50348.js"]
+      js: [assets + "/_app/start-f51f681a.js", assets + "/_app/chunks/vendor-4fa50348.js"]
     },
     fetched: void 0,
     floc: false,
@@ -6209,8 +6230,8 @@ function render(request, {
   return respond({ ...request, host }, options, { prerender });
 }
 var __accessCheck, __privateGet, __privateAdd, __privateSet, _map, chars, unsafeChars, reserved, escaped$1, objectProtoOwnPropertyNames, subscriber_queue, escape_json_string_in_html_dict, escape_html_attr_dict, s$1, s, absolute, ReadOnlyFormData, current_component, escaped, missing_component, on_destroy, css, Root, base, assets, user_hooks, template, options, default_settings, empty, manifest, get_hooks, module_lookup, metadata_lookup;
-var init_app_16d2d9c0 = __esm({
-  ".svelte-kit/output/server/chunks/app-16d2d9c0.js"() {
+var init_app_d9509dc8 = __esm({
+  ".svelte-kit/output/server/chunks/app-d9509dc8.js"() {
     init_shims();
     __accessCheck = (obj, member, msg) => {
       if (!member.has(obj))
@@ -6397,11 +6418,11 @@ ${``}`;
       externalFetch: hooks.externalFetch || fetch
     });
     module_lookup = {
-      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_565bb576(), layout_565bb576_exports)),
-      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_ebe54579(), error_ebe54579_exports)),
-      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_68f806ce(), index_68f806ce_exports))
+      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_dc317cfe(), layout_dc317cfe_exports)),
+      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_c73aeb82(), error_c73aeb82_exports)),
+      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_f94501f2(), index_f94501f2_exports))
     };
-    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-0fd5f1cd.js", "css": ["assets/pages/__layout.svelte-893aeefc.css"], "js": ["pages/__layout.svelte-0fd5f1cd.js", "chunks/vendor-4fa50348.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-3b7de08c.js", "css": [], "js": ["error.svelte-3b7de08c.js", "chunks/vendor-4fa50348.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-1ffecb9b.js", "css": [], "js": ["pages/index.svelte-1ffecb9b.js", "chunks/vendor-4fa50348.js"], "styles": [] } };
+    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-0fd5f1cd.js", "css": ["assets/pages/__layout.svelte-19b302e0.css"], "js": ["pages/__layout.svelte-0fd5f1cd.js", "chunks/vendor-4fa50348.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-3b7de08c.js", "css": [], "js": ["error.svelte-3b7de08c.js", "chunks/vendor-4fa50348.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-bf592fe8.js", "css": [], "js": ["pages/index.svelte-bf592fe8.js", "chunks/vendor-4fa50348.js"], "styles": [] } };
   }
 });
 
@@ -6454,7 +6475,7 @@ function getRawBody(req) {
 
 // .svelte-kit/output/server/app.js
 init_shims();
-init_app_16d2d9c0();
+init_app_d9509dc8();
 
 // .svelte-kit/vercel/entry.js
 init();
