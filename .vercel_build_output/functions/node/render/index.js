@@ -4696,25 +4696,25 @@ var init_shims = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-f57181ae.js
-var layout_f57181ae_exports = {};
-__export(layout_f57181ae_exports, {
+// .svelte-kit/output/server/chunks/__layout-df754178.js
+var layout_df754178_exports = {};
+__export(layout_df754178_exports, {
   default: () => _layout
 });
 var _layout;
-var init_layout_f57181ae = __esm({
-  ".svelte-kit/output/server/chunks/__layout-f57181ae.js"() {
+var init_layout_df754178 = __esm({
+  ".svelte-kit/output/server/chunks/__layout-df754178.js"() {
     init_shims();
-    init_app_2148bb36();
+    init_app_a4ffff8c();
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `${slots.default ? slots.default({}) : ``}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/error-04ff7860.js
-var error_04ff7860_exports = {};
-__export(error_04ff7860_exports, {
+// .svelte-kit/output/server/chunks/error-a710f2c8.js
+var error_a710f2c8_exports = {};
+__export(error_a710f2c8_exports, {
   default: () => Error2,
   load: () => load
 });
@@ -4722,10 +4722,10 @@ function load({ error: error2, status }) {
   return { props: { error: error2, status } };
 }
 var Error2;
-var init_error_04ff7860 = __esm({
-  ".svelte-kit/output/server/chunks/error-04ff7860.js"() {
+var init_error_a710f2c8 = __esm({
+  ".svelte-kit/output/server/chunks/error-a710f2c8.js"() {
     init_shims();
-    init_app_2148bb36();
+    init_app_a4ffff8c();
     Error2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { status } = $$props;
       let { error: error2 } = $$props;
@@ -4745,16 +4745,24 @@ ${error2.stack ? `<pre>${escape(error2.stack)}</pre>` : ``}`;
   }
 });
 
-// .svelte-kit/output/server/chunks/index-17ad9647.js
-var index_17ad9647_exports = {};
-__export(index_17ad9647_exports, {
+// .svelte-kit/output/server/chunks/index-2940db1e.js
+var index_2940db1e_exports = {};
+__export(index_2940db1e_exports, {
   default: () => Routes
 });
-var Channel, Category, ChannelBar, Chat, ServerIcon, ServerBar, Routes;
-var init_index_17ad9647 = __esm({
-  ".svelte-kit/output/server/chunks/index-17ad9647.js"() {
+var Category, Channel, ChannelBar, Chat, ServerIcon, ServerBar, Routes;
+var init_index_2940db1e = __esm({
+  ".svelte-kit/output/server/chunks/index-2940db1e.js"() {
     init_shims();
-    init_app_2148bb36();
+    init_app_a4ffff8c();
+    Category = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { name } = $$props;
+      if ($$props.name === void 0 && $$bindings.name && name !== void 0)
+        $$bindings.name(name);
+      return `<div class="${"text-darkgray font-bold cursor-pointer"}"><span class="${"flex items-center m-3 mb-0 hover:text-white"}">${`<svg class="${"w-4 h-4 mr-1"}" fill="${"none"}" stroke="${"currentColor"}" viewBox="${"0 0 24 24"}" xmlns="${"http://www.w3.org/2000/svg"}"><path strokelinecap="${"round"}" strokelinejoin="${"round"}"${add_attribute("strokewidth", 2, 0)} d="${"M19 9l-7 7-7-7"}"></path></svg>`}
+        <span class="${"w-full select-none"}">${escape(name)}</span></span>
+    <div class="${"flex flex-col"}">${`${slots.default ? slots.default({}) : ``}`}</div></div>`;
+    });
     Channel = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { name } = $$props;
       let { type = "text" } = $$props;
@@ -4762,50 +4770,30 @@ var init_index_17ad9647 = __esm({
         $$bindings.name(name);
       if ($$props.type === void 0 && $$bindings.type && type !== void 0)
         $$bindings.type(type);
-      return `<div class="${"ml-6 flex hover:bg-dark4 group p-2 rounded-lg group justify-between"}"><div class="${"flex justify-around"}">${type == "text" ? `<svg class="${"w-6 h-6 mr-1.5"}" fill="${"none"}" stroke="${"currentColor"}" viewBox="${"0 0 24 24"}" xmlns="${"http://www.w3.org/2000/svg"}"><path strokelinecap="${"round"}" strokelinejoin="${"round"}"${add_attribute("strokewidth", 2, 0)} d="${"M7 20l4-16m2 16l4-16M6 9h14M4 15h14"}"></path></svg>` : `${type == "vocal" ? `<svg class="${"w-6 h-6 mr-1.5"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"}" cliprule="${"evenodd"}"></path></svg>` : ``}`}
-        <p class="${"group-hover:text-white font-medium"}">${escape(name)}</p></div>
-    <div class="${"flex flex-1 scale-0 group-hover:scale-100 text-white justify-end"}"><svg class="${"w-6 h-6"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"}"></path></svg></div></div>`;
-    });
-    Category = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let { name } = $$props;
-      let { channels } = $$props;
-      if ($$props.name === void 0 && $$bindings.name && name !== void 0)
-        $$bindings.name(name);
-      if ($$props.channels === void 0 && $$bindings.channels && channels !== void 0)
-        $$bindings.channels(channels);
-      return `<div class="${"text-darkgray font-bold"}"><span class="${"flex items-center m-3 hover:text-white"}">${`<svg class="${"w-4 h-4 mr-1"}" fill="${"none"}" stroke="${"currentColor"}" viewBox="${"0 0 24 24"}" xmlns="${"http://www.w3.org/2000/svg"}"><path strokelinecap="${"round"}" strokelinejoin="${"round"}"${add_attribute("strokewidth", 2, 0)} d="${"M19 9l-7 7-7-7"}"></path></svg>`}
-        <span class="${"w-full"}">${escape(name)}</span></span>
-    <div class="${"flex flex-col"}">${`${each(channels, (channel) => `${validate_component(Channel, "Channel").$$render($$result, { name: channel.name, type: channel.type }, {}, {})}`)}`}</div></div>`;
+      return `<div class="${"ml-6 flex hover:bg-dark4 group p-2 rounded-lg group justify-between"}"><div class="${"flex justify-around items-center"}">${type == "text" ? `<svg class="${"w-6 h-6 mr-1.5"}" fill="${"none"}" stroke="${"currentColor"}" viewBox="${"0 0 24 24"}" xmlns="${"http://www.w3.org/2000/svg"}"><path strokelinecap="${"round"}" strokelinejoin="${"round"}"${add_attribute("strokewidth", 2, 0)} d="${"M7 20l4-16m2 16l4-16M6 9h14M4 15h14"}"></path></svg>` : `${type == "vocal" ? `<svg class="${"w-5 h-5 mr-1.5"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"}" cliprule="${"evenodd"}"></path></svg>` : ``}`}
+        <p class="${"group-hover:text-white font-medium select-none"}">${escape(name)}</p></div>
+    <div class="${"flex flex-1 items-center opacity-0 group-hover:opacity-100 text-white justify-end"}"><svg class="${"w-5 h-5"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"}"></path></svg></div></div>`;
     });
     ChannelBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `<div class="${"flex flex-col bg-dark2 w-60 h-screen justify-between"}"><div><div class="${"flex h-14 w-full border-b-2 shadow-lg border-dark1 text-white items-center justify-between font-mono font-bold hover:bg-dark4 cursor-pointer"}"><div class="${"m-3"}"><span>HERBE MALVEILLANTE</span>
                 <span class="${"font-black text-2xl"}">\u2335</span></div></div>
-
-
-        ${validate_component(Category, "Category").$$render($$result, {
-        name: "\u{1F4CC} INFO",
-        channels: [{ name: "roles", type: "text" }, { name: "info", type: "text" }]
-      }, {}, {})}
-        ${validate_component(Category, "Category").$$render($$result, {
-        name: "\u{1F5E3} GENERAL",
-        channels: [
-          { name: "\u{1F1EB}\u{1F1F7} french", type: "text" },
-          { name: "\u{1F1EC}\u{1F1E7} english", type: "text" },
-          { name: "\u{1F4F7} media", type: "text" },
-          { name: "\u{1F50A} vocal", type: "vocal" },
-          { name: "\u{1F3B6} music", type: "vocal" }
-        ]
-      }, {}, {})}
-        ${validate_component(Category, "Category").$$render($$result, {
-        name: "\u{1F4BB} development",
-        channels: [
-          { name: "\u{1F4E6} packages", type: "text" },
-          { name: "html-css", type: "text" },
-          { name: "javascript", type: "text" },
-          { name: "python", type: "text" }
-        ]
-      }, {}, {})}</div>
-
+        ${validate_component(Category, "Category").$$render($$result, { name: "\u{1F4CC} INFO" }, {}, {
+        default: () => `${validate_component(Channel, "Channel").$$render($$result, { name: "roles", type: "text" }, {}, {})}
+            ${validate_component(Channel, "Channel").$$render($$result, { name: "info", type: "text" }, {}, {})}`
+      })}
+        ${validate_component(Category, "Category").$$render($$result, { name: "\u{1F5E3} GENERAL" }, {}, {
+        default: () => `${validate_component(Channel, "Channel").$$render($$result, { name: "\u{1F1EB}\u{1F1F7} french", type: "text" }, {}, {})}
+            ${validate_component(Channel, "Channel").$$render($$result, { name: "\u{1F1EC}\u{1F1E7} english", type: "text" }, {}, {})}
+            ${validate_component(Channel, "Channel").$$render($$result, { name: "\u{1F4F7} media", type: "text" }, {}, {})}
+            ${validate_component(Channel, "Channel").$$render($$result, { name: "\u{1F50A} vocal", type: "vocal" }, {}, {})}
+            ${validate_component(Channel, "Channel").$$render($$result, { name: "\u{1F3B6} music", type: "vocal" }, {}, {})}`
+      })}
+        ${validate_component(Category, "Category").$$render($$result, { name: "\u{1F4BB} development" }, {}, {
+        default: () => `${validate_component(Channel, "Channel").$$render($$result, { name: "\u{1F4E6} packages", type: "text" }, {}, {})}
+            ${validate_component(Channel, "Channel").$$render($$result, { name: "html-css", type: "text" }, {}, {})}
+            ${validate_component(Channel, "Channel").$$render($$result, { name: "javascript", type: "text" }, {}, {})}
+            ${validate_component(Channel, "Channel").$$render($$result, { name: "python", type: "text" }, {}, {})}`
+      })}</div>
     <div class="${"flex h-auto w-full bg-dark1_5 text-white"}"><div class="${"m-3"}"><span>HerbeMalveillante</span></div></div></div>`;
     });
     Chat = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -4831,7 +4819,7 @@ var init_index_17ad9647 = __esm({
       return `<div class="${"rounded-[2em] w-14 h-14 flex-shrink-0 text-center bg-dark3 m-2 text-4xl text-bold text-green hover:rounded-2xl transition-all hover:bg-green hover:text-white group"}"><div class="${"absolute bg-white w-1 h-8 left-0 mt-3 rounded-r scale-0 group-hover:scale-100 transition-all"}"></div>
     <div class="${"absolute bg-black left-[85px] mt-2 scale-0 group-hover:scale-100 transition-all text-xl text-white p-2 rounded-xl"}">${escape(tooltip)}</div>
 
-    ${type == "icon" || type == "image" ? `<img class="${"rounded-[2em] hover:rounded-2xl hover:bg-green transition-all"}"${add_attribute("src", filename, 0)}${add_attribute("alt", tooltip, 0)}>` : `${type == "text" ? `<span class="${"flex items-center justify-center h-full"}">${escape(value)}</span>` : ``}`}</div>`;
+    ${type == "icon" || type == "image" ? `<img class="${"rounded-[2em] hover:rounded-2xl hover:bg-green transition-all"}"${add_attribute("src", filename, 0)}${add_attribute("alt", tooltip, 0)}>` : `${type == "text" ? `<span class="${"flex justify-center items-center text-center"}">${escape(value)}</span>` : ``}`}</div>`;
     });
     ServerBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `<div class="${"flex flex-col w-20 h-screen bg-dark1 text-white items-center shadow-2xl"}"><div class="${"mt-1"}">${validate_component(ServerIcon, "ServerIcon").$$render($$result, {
@@ -4905,7 +4893,7 @@ var init_index_17ad9647 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/app-2148bb36.js
+// .svelte-kit/output/server/chunks/app-a4ffff8c.js
 function get_single_valued_header(headers, key) {
   const value = headers[key];
   if (Array.isArray(value)) {
@@ -6113,13 +6101,6 @@ function setContext(key, context) {
 function escape(html) {
   return String(html).replace(/["'&<>]/g, (match) => escaped[match]);
 }
-function each(items, fn) {
-  let str = "";
-  for (let i = 0; i < items.length; i += 1) {
-    str += fn(items[i], i);
-  }
-  return str;
-}
 function validate_component(component, name) {
   if (!component || !component.$$render) {
     if (name === "svelte:component")
@@ -6183,9 +6164,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-cd262c0b.js",
+      file: assets + "/_app/start-24e326d0.js",
       css: [assets + "/_app/assets/start-464e9d0a.css"],
-      js: [assets + "/_app/start-cd262c0b.js", assets + "/_app/chunks/vendor-4fa50348.js"]
+      js: [assets + "/_app/start-24e326d0.js", assets + "/_app/chunks/vendor-dcb877ac.js"]
     },
     fetched: void 0,
     floc: false,
@@ -6229,8 +6210,8 @@ function render(request, {
   return respond({ ...request, host }, options, { prerender });
 }
 var __accessCheck, __privateGet, __privateAdd, __privateSet, _map, chars, unsafeChars, reserved, escaped$1, objectProtoOwnPropertyNames, subscriber_queue, escape_json_string_in_html_dict, escape_html_attr_dict, s$1, s, absolute, ReadOnlyFormData, current_component, escaped, missing_component, on_destroy, css, Root, base, assets, user_hooks, template, options, default_settings, empty, manifest, get_hooks, module_lookup, metadata_lookup;
-var init_app_2148bb36 = __esm({
-  ".svelte-kit/output/server/chunks/app-2148bb36.js"() {
+var init_app_a4ffff8c = __esm({
+  ".svelte-kit/output/server/chunks/app-a4ffff8c.js"() {
     init_shims();
     __accessCheck = (obj, member, msg) => {
       if (!member.has(obj))
@@ -6417,11 +6398,11 @@ ${``}`;
       externalFetch: hooks.externalFetch || fetch
     });
     module_lookup = {
-      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_f57181ae(), layout_f57181ae_exports)),
-      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_04ff7860(), error_04ff7860_exports)),
-      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_17ad9647(), index_17ad9647_exports))
+      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_df754178(), layout_df754178_exports)),
+      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_a710f2c8(), error_a710f2c8_exports)),
+      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_2940db1e(), index_2940db1e_exports))
     };
-    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-0fd5f1cd.js", "css": ["assets/pages/__layout.svelte-19b302e0.css"], "js": ["pages/__layout.svelte-0fd5f1cd.js", "chunks/vendor-4fa50348.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-3b7de08c.js", "css": [], "js": ["error.svelte-3b7de08c.js", "chunks/vendor-4fa50348.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-b1f90164.js", "css": [], "js": ["pages/index.svelte-b1f90164.js", "chunks/vendor-4fa50348.js"], "styles": [] } };
+    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-b6039361.js", "css": ["assets/pages/__layout.svelte-4c3d7a42.css"], "js": ["pages/__layout.svelte-b6039361.js", "chunks/vendor-dcb877ac.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-63e92477.js", "css": [], "js": ["error.svelte-63e92477.js", "chunks/vendor-dcb877ac.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-9c47864c.js", "css": [], "js": ["pages/index.svelte-9c47864c.js", "chunks/vendor-dcb877ac.js"], "styles": [] } };
   }
 });
 
@@ -6474,7 +6455,7 @@ function getRawBody(req) {
 
 // .svelte-kit/output/server/app.js
 init_shims();
-init_app_2148bb36();
+init_app_a4ffff8c();
 
 // .svelte-kit/vercel/entry.js
 init();
