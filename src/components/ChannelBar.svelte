@@ -28,10 +28,9 @@
 
     </div>
 
-    <div class="flex h-auto w-full bg-dark1_5">
+    <div class="flex h-auto w-full bg-dark1_5 text-white">
         <div class="m-3">
-            <span>HERBE MALVEILLANTE</span>
-            <span class="font-black text-2xl">⌵</span>
+            <span>HerbeMalveillante</span>
         </div>
     </div>
     
