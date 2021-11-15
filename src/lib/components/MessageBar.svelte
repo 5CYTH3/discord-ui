@@ -1,3 +1,7 @@
+<script>
+    import Message from './Message.svelte'
+</script>
+
 <main class = "flex justify-center items-center h-full">
-    <span>Messages will display here</span>
+    <Message/>
 </main>

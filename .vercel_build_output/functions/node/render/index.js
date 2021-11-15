@@ -3326,10 +3326,10 @@ var init_install_fetch = __esm({
           const readable = pair === null || pair === void 0 ? void 0 : pair.readable;
           assertRequiredField(readable, "readable", "ReadableWritablePair");
           assertReadableStream(readable, `${context} has member 'readable' that`);
-          const writable2 = pair === null || pair === void 0 ? void 0 : pair.writable;
-          assertRequiredField(writable2, "writable", "ReadableWritablePair");
-          assertWritableStream(writable2, `${context} has member 'writable' that`);
-          return { readable, writable: writable2 };
+          const writable3 = pair === null || pair === void 0 ? void 0 : pair.writable;
+          assertRequiredField(writable3, "writable", "ReadableWritablePair");
+          assertWritableStream(writable3, `${context} has member 'writable' that`);
+          return { readable, writable: writable3 };
         }
         class ReadableStream2 {
           constructor(rawUnderlyingSource = {}, rawStrategy = {}) {
@@ -3907,10 +3907,10 @@ var init_install_fetch = __esm({
           if (stream._backpressure) {
             const backpressureChangePromise = stream._backpressureChangePromise;
             return transformPromiseWith(backpressureChangePromise, () => {
-              const writable2 = stream._writable;
-              const state = writable2._state;
+              const writable3 = stream._writable;
+              const state = writable3._state;
               if (state === "erroring") {
-                throw writable2._storedError;
+                throw writable3._storedError;
               }
               return TransformStreamDefaultControllerPerformTransform(controller, chunk);
             });
@@ -4696,25 +4696,25 @@ var init_shims = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-df754178.js
-var layout_df754178_exports = {};
-__export(layout_df754178_exports, {
+// .svelte-kit/output/server/chunks/__layout-b72f77aa.js
+var layout_b72f77aa_exports = {};
+__export(layout_b72f77aa_exports, {
   default: () => _layout
 });
 var _layout;
-var init_layout_df754178 = __esm({
-  ".svelte-kit/output/server/chunks/__layout-df754178.js"() {
+var init_layout_b72f77aa = __esm({
+  ".svelte-kit/output/server/chunks/__layout-b72f77aa.js"() {
     init_shims();
-    init_app_a4ffff8c();
+    init_app_a55c7e88();
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `${slots.default ? slots.default({}) : ``}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/error-a710f2c8.js
-var error_a710f2c8_exports = {};
-__export(error_a710f2c8_exports, {
+// .svelte-kit/output/server/chunks/error-2cd9ba61.js
+var error_2cd9ba61_exports = {};
+__export(error_2cd9ba61_exports, {
   default: () => Error2,
   load: () => load
 });
@@ -4722,10 +4722,10 @@ function load({ error: error2, status }) {
   return { props: { error: error2, status } };
 }
 var Error2;
-var init_error_a710f2c8 = __esm({
-  ".svelte-kit/output/server/chunks/error-a710f2c8.js"() {
+var init_error_2cd9ba61 = __esm({
+  ".svelte-kit/output/server/chunks/error-2cd9ba61.js"() {
     init_shims();
-    init_app_a4ffff8c();
+    init_app_a55c7e88();
     Error2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { status } = $$props;
       let { error: error2 } = $$props;
@@ -4745,23 +4745,171 @@ ${error2.stack ? `<pre>${escape(error2.stack)}</pre>` : ``}`;
   }
 });
 
-// .svelte-kit/output/server/chunks/index-2940db1e.js
-var index_2940db1e_exports = {};
-__export(index_2940db1e_exports, {
+// .svelte-kit/output/server/chunks/index-b970bbd0.js
+var index_b970bbd0_exports = {};
+__export(index_b970bbd0_exports, {
   default: () => Routes
 });
-var Category, Channel, ChannelBar, Chat, ServerIcon, ServerBar, Routes;
-var init_index_2940db1e = __esm({
-  ".svelte-kit/output/server/chunks/index-2940db1e.js"() {
+function writable(value, start = noop) {
+  let stop;
+  const subscribers = new Set();
+  function set(new_value) {
+    if (safe_not_equal(value, new_value)) {
+      value = new_value;
+      if (stop) {
+        const run_queue = !subscriber_queue.length;
+        for (const subscriber of subscribers) {
+          subscriber[1]();
+          subscriber_queue.push(subscriber, value);
+        }
+        if (run_queue) {
+          for (let i = 0; i < subscriber_queue.length; i += 2) {
+            subscriber_queue[i][0](subscriber_queue[i + 1]);
+          }
+          subscriber_queue.length = 0;
+        }
+      }
+    }
+  }
+  function update(fn) {
+    set(fn(value));
+  }
+  function subscribe2(run2, invalidate = noop) {
+    const subscriber = [run2, invalidate];
+    subscribers.add(subscriber);
+    if (subscribers.size === 1) {
+      stop = start(set) || noop;
+    }
+    run2(value);
+    return () => {
+      subscribers.delete(subscriber);
+      if (subscribers.size === 0) {
+        stop();
+        stop = null;
+      }
+    };
+  }
+  return { set, update, subscribe: subscribe2 };
+}
+function is_date(obj) {
+  return Object.prototype.toString.call(obj) === "[object Date]";
+}
+function get_interpolator(a, b) {
+  if (a === b || a !== a)
+    return () => a;
+  const type = typeof a;
+  if (type !== typeof b || Array.isArray(a) !== Array.isArray(b)) {
+    throw new Error("Cannot interpolate values of different type");
+  }
+  if (Array.isArray(a)) {
+    const arr = b.map((bi, i) => {
+      return get_interpolator(a[i], bi);
+    });
+    return (t) => arr.map((fn) => fn(t));
+  }
+  if (type === "object") {
+    if (!a || !b)
+      throw new Error("Object cannot be null");
+    if (is_date(a) && is_date(b)) {
+      a = a.getTime();
+      b = b.getTime();
+      const delta = b - a;
+      return (t) => new Date(a + t * delta);
+    }
+    const keys = Object.keys(b);
+    const interpolators = {};
+    keys.forEach((key) => {
+      interpolators[key] = get_interpolator(a[key], b[key]);
+    });
+    return (t) => {
+      const result = {};
+      keys.forEach((key) => {
+        result[key] = interpolators[key](t);
+      });
+      return result;
+    };
+  }
+  if (type === "number") {
+    const delta = b - a;
+    return (t) => a + t * delta;
+  }
+  throw new Error(`Cannot interpolate ${type} values`);
+}
+function tweened(value, defaults = {}) {
+  const store = writable(value);
+  let task;
+  let target_value = value;
+  function set(new_value, opts) {
+    if (value == null) {
+      store.set(value = new_value);
+      return Promise.resolve();
+    }
+    target_value = new_value;
+    let previous_task = task;
+    let started = false;
+    let { delay = 0, duration = 400, easing = identity, interpolate = get_interpolator } = assign(assign({}, defaults), opts);
+    if (duration === 0) {
+      if (previous_task) {
+        previous_task.abort();
+        previous_task = null;
+      }
+      store.set(value = target_value);
+      return Promise.resolve();
+    }
+    const start = now() + delay;
+    let fn;
+    task = loop((now2) => {
+      if (now2 < start)
+        return true;
+      if (!started) {
+        fn = interpolate(value, new_value);
+        if (typeof duration === "function")
+          duration = duration(value, new_value);
+        started = true;
+      }
+      if (previous_task) {
+        previous_task.abort();
+        previous_task = null;
+      }
+      const elapsed = now2 - start;
+      if (elapsed > duration) {
+        store.set(value = new_value);
+        return false;
+      }
+      store.set(value = fn(easing(elapsed / duration)));
+      return true;
+    });
+    return task.promise;
+  }
+  return {
+    set,
+    update: (fn, opts) => set(fn(target_value, value), opts),
+    subscribe: store.subscribe
+  };
+}
+var subscriber_queue, Category, Channel, ChannelBar, Search, MemberBar, Message, MessageBar, MessageInput, Chat, ServerIcon, ServerBar, Routes;
+var init_index_b970bbd0 = __esm({
+  ".svelte-kit/output/server/chunks/index-b970bbd0.js"() {
     init_shims();
-    init_app_a4ffff8c();
+    init_app_a55c7e88();
+    subscriber_queue = [];
     Category = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let rotateValue;
+      let $$unsubscribe_tweenValue;
+      let val = 90;
+      const tweenValue = tweened(0);
+      $$unsubscribe_tweenValue = subscribe(tweenValue, (value) => value);
       let { name } = $$props;
       if ($$props.name === void 0 && $$bindings.name && name !== void 0)
         $$bindings.name(name);
-      return `<div class="${"text-darkgray font-bold cursor-pointer"}"><span class="${"flex items-center m-3 mb-0 hover:text-white"}">${`<svg class="${"w-4 h-4 mr-1"}" fill="${"none"}" stroke="${"currentColor"}" viewBox="${"0 0 24 24"}" xmlns="${"http://www.w3.org/2000/svg"}"><path strokelinecap="${"round"}" strokelinejoin="${"round"}"${add_attribute("strokewidth", 2, 0)} d="${"M19 9l-7 7-7-7"}"></path></svg>`}
+      rotateValue = val;
+      {
+        tweenValue.set(rotateValue);
+      }
+      $$unsubscribe_tweenValue();
+      return `<div class="${"text-darkgray font-bold cursor-pointer"}"><span class="${"flex items-center m-3 mb-0 hover:text-white"}">${`<svg class="${"w-4 h-4 mr-1 transition-all"}" fill="${"none"}" stroke="${"currentColor"}" viewBox="${"0 0 24 24"}" xmlns="${"http://www.w3.org/2000/svg"}"><path strokelinecap="${"round"}" strokelinejoin="${"round"}"${add_attribute("strokewidth", 2, 0)} d="${"M19 9l-7 7-7-7"}"></path></svg>`}
         <span class="${"w-full select-none"}">${escape(name)}</span></span>
-    <div class="${"flex flex-col"}">${`${slots.default ? slots.default({}) : ``}`}</div></div>`;
+    <div class="${"flex flex-col"}">${`<div>${slots.default ? slots.default({}) : ``}</div>`}</div></div>`;
     });
     Channel = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { name } = $$props;
@@ -4770,9 +4918,9 @@ var init_index_2940db1e = __esm({
         $$bindings.name(name);
       if ($$props.type === void 0 && $$bindings.type && type !== void 0)
         $$bindings.type(type);
-      return `<div class="${"ml-6 flex hover:bg-dark4 group p-2 rounded-lg group justify-between"}"><div class="${"flex justify-around items-center"}">${type == "text" ? `<svg class="${"w-6 h-6 mr-1.5"}" fill="${"none"}" stroke="${"currentColor"}" viewBox="${"0 0 24 24"}" xmlns="${"http://www.w3.org/2000/svg"}"><path strokelinecap="${"round"}" strokelinejoin="${"round"}"${add_attribute("strokewidth", 2, 0)} d="${"M7 20l4-16m2 16l4-16M6 9h14M4 15h14"}"></path></svg>` : `${type == "vocal" ? `<svg class="${"w-5 h-5 mr-1.5"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"}" cliprule="${"evenodd"}"></path></svg>` : ``}`}
+      return `<div class="${"ml-6 flex hover:bg-dark4 group p-2 rounded-lg group justify-between"}"><div class="${"flex justify-around items-center"}">${type == "text" ? `<svg class="${"w-6 h-6 mr-1.5"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"}" cliprule="${"evenodd"}"></path></svg>` : `${type == "vocal" ? `<svg class="${"w-5 h-5 mr-1.5"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"}" cliprule="${"evenodd"}"></path></svg>` : ``}`}
         <p class="${"group-hover:text-white font-medium select-none"}">${escape(name)}</p></div>
-    <div class="${"flex flex-1 items-center opacity-0 group-hover:opacity-100 text-white justify-end"}"><svg class="${"w-5 h-5"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"}"></path></svg></div></div>`;
+    <div class="${"flex flex-1 items-center opacity-0 group-hover:opacity-100 text-lightgray justify-end"}"><svg class="${"w-5 h-5 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"}"></path></svg></div></div>`;
     });
     ChannelBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `<div class="${"flex flex-col bg-dark2 w-60 h-screen justify-between"}"><div><div class="${"flex h-14 w-full border-b-2 shadow-lg border-dark1 text-white items-center justify-between font-mono font-bold hover:bg-dark4 cursor-pointer"}"><div class="${"m-3"}"><span>HERBE MALVEILLANTE</span>
@@ -4796,9 +4944,46 @@ var init_index_2940db1e = __esm({
       })}</div>
     <div class="${"flex h-auto w-full bg-dark1_5 text-white"}"><div class="${"m-3"}"><span>HerbeMalveillante</span></div></div></div>`;
     });
+    Search = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      return `<main class="${"flex bg-dark1 text-darkgray w-40 justify-between rounded items-center"}"><span class="${"ml-2"}">Search</span>
+    <svg class="${"w-4 h-4 mr-2"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"}" cliprule="${"evenodd"}"></path></svg></main>`;
+    });
+    MemberBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      return `<main class="${"flex h-full w-60 bg-dark2 justify-center items-center"}">Member bar
+</main>`;
+    });
+    Message = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      return `<main>message
+</main>`;
+    });
+    MessageBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      return `<main class="${"flex justify-center items-center h-full"}">${validate_component(Message, "Message").$$render($$result, {}, {}, {})}</main>`;
+    });
+    MessageInput = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let messageInput = "";
+      return `<main class="${"flex items-center justify-center h-14 bg-chat rounded-xl m-4 mb-6 text-lightgray"}"><svg class="${"m-2 w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"}" clip-rule="${"evenodd"}"></path></svg>
+    <input class="${"bg-chat flex-1 m-2"}" placeholder="${"Send a message"}"${add_attribute("value", messageInput, 0)}>
+    <svg class="${"m-2 w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"}" clip-rule="${"evenodd"}"></path><path d="${"M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"}"></path></svg>
+    <svg class="${"m-2 w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"}"></path></svg>
+    <svg class="${"m-2 w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z"}" clip-rule="${"evenodd"}"></path></svg>
+    <svg class="${"m-2 w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"}" clip-rule="${"evenodd"}"></path></svg></main>`;
+    });
     Chat = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `<div class="${"flex flex-1 h-screen bg-dark3 text-white items-center justify-center"}">Chat
-</div>`;
+      return `<main class="${"flex flex-1 flex-col h-screen bg-dark3 text-white"}">
+    <div class="${"flex h-14 w-full shadow border-b border-black items-center justify-between"}"><div class="${"flex text-lg font-medium ml-6 items-center"}"><svg class="${"w-6 h-6 mr-1.5 text-darkgray text-xl font-black"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"}" cliprule="${"evenodd"}"></path></svg>
+            <span>Medias</span></div>
+        <div class="${"mr-6 flex w-[28rem] justify-between text-lightgray"}"><svg class="${"w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"}"></path><path d="${"M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"}"></path></svg>
+            <svg class="${"w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"}"></path></svg>
+            <svg class="${"w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"}"></path></svg>
+            <svg class="${"w-7 h-7 text-white hover:text-gray-300 "}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"}"></path></svg>
+            ${validate_component(Search, "Search").$$render($$result, {}, {}, {})}
+            <svg class="${"w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z"}" cliprule="${"evenodd"}"></path></svg>
+            <svg class="${"w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"}" clip-rule="${"evenodd"}"></path></svg></div></div>
+
+    
+    <div class="${"flex h-full"}"><div class="${"flex flex-1 flex-col h-full justify-between"}">${validate_component(MessageBar, "MessageBar").$$render($$result, {}, {}, {})}
+            ${validate_component(MessageInput, "MessageInput").$$render($$result, {}, {}, {})}</div>
+        <div>${validate_component(MemberBar, "MemberBar").$$render($$result, {}, {}, {})}</div></div></main>`;
     });
     ServerIcon = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { type } = $$props;
@@ -4849,7 +5034,7 @@ var init_index_2940db1e = __esm({
         tooltip: "Apex Legends"
       }, {}, {})}
         ${validate_component(ServerIcon, "ServerIcon").$$render($$result, {
-        value: "https://pbs.twimg.com/profile_images/1457455887006769152/lGdDUsNb_400x400.jpg",
+        value: "https://pbs.twimg.com/profile_images/1459925091458985993/0vlsvQ2S_400x400.jpg",
         type: "image",
         tooltip: "AzerZetsu"
       }, {}, {})}
@@ -4875,13 +5060,13 @@ var init_index_2940db1e = __esm({
       }, {}, {})}
 
         ${validate_component(ServerIcon, "ServerIcon").$$render($$result, {
-        value: "+",
-        type: "text",
+        value: "https://media.discordapp.net/attachments/899566962550640640/908731573212422174/plus.png",
+        type: "image",
         tooltip: "Add a server"
       }, {}, {})}
         ${validate_component(ServerIcon, "ServerIcon").$$render($$result, {
-        value: "\u{1F9ED}",
-        type: "text",
+        value: "https://media.discordapp.net/attachments/899566962550640640/908732082023432242/compass.png",
+        type: "image",
         tooltip: "Explore public servers"
       }, {}, {})}</div></div>`;
     });
@@ -4893,7 +5078,7 @@ var init_index_2940db1e = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/app-a4ffff8c.js
+// .svelte-kit/output/server/chunks/app-a55c7e88.js
 function get_single_valued_header(headers, key) {
   const value = headers[key];
   if (Array.isArray(value)) {
@@ -5168,28 +5353,28 @@ function stringifyString(str) {
   result += '"';
   return result;
 }
-function noop() {
+function noop$1() {
 }
-function safe_not_equal(a, b) {
+function safe_not_equal$1(a, b) {
   return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
 }
-function writable(value, start = noop) {
+function writable2(value, start = noop$1) {
   let stop;
   const subscribers = new Set();
   function set(new_value) {
-    if (safe_not_equal(value, new_value)) {
+    if (safe_not_equal$1(value, new_value)) {
       value = new_value;
       if (stop) {
-        const run_queue = !subscriber_queue.length;
+        const run_queue = !subscriber_queue2.length;
         for (const subscriber of subscribers) {
           subscriber[1]();
-          subscriber_queue.push(subscriber, value);
+          subscriber_queue2.push(subscriber, value);
         }
         if (run_queue) {
-          for (let i = 0; i < subscriber_queue.length; i += 2) {
-            subscriber_queue[i][0](subscriber_queue[i + 1]);
+          for (let i = 0; i < subscriber_queue2.length; i += 2) {
+            subscriber_queue2[i][0](subscriber_queue2[i + 1]);
           }
-          subscriber_queue.length = 0;
+          subscriber_queue2.length = 0;
         }
       }
     }
@@ -5197,11 +5382,11 @@ function writable(value, start = noop) {
   function update(fn) {
     set(fn(value));
   }
-  function subscribe(run2, invalidate = noop) {
+  function subscribe2(run2, invalidate = noop$1) {
     const subscriber = [run2, invalidate];
     subscribers.add(subscriber);
     if (subscribers.size === 1) {
-      stop = start(set) || noop;
+      stop = start(set) || noop$1;
     }
     run2(value);
     return () => {
@@ -5212,7 +5397,7 @@ function writable(value, start = noop) {
       }
     };
   }
-  return { set, update, subscribe };
+  return { set, update, subscribe: subscribe2 };
 }
 function hash(value) {
   let hash2 = 5381;
@@ -5285,11 +5470,11 @@ async function render_response({
         is_private = true;
       maxage = loaded.maxage;
     });
-    const session = writable($session);
+    const session = writable2($session);
     const props = {
       stores: {
-        page: writable(null),
-        navigating: writable(null),
+        page: writable2(null),
+        navigating: writable2(null),
         session
       },
       page,
@@ -6078,6 +6263,13 @@ async function respond(incoming, options2, state = {}) {
     };
   }
 }
+function noop() {
+}
+function assign(tar, src2) {
+  for (const k in src2)
+    tar[k] = src2[k];
+  return tar;
+}
 function run(fn) {
   return fn();
 }
@@ -6086,6 +6278,39 @@ function blank_object() {
 }
 function run_all(fns) {
   fns.forEach(run);
+}
+function safe_not_equal(a, b) {
+  return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
+}
+function subscribe(store, ...callbacks) {
+  if (store == null) {
+    return noop;
+  }
+  const unsub = store.subscribe(...callbacks);
+  return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
+}
+function run_tasks(now2) {
+  tasks.forEach((task) => {
+    if (!task.c(now2)) {
+      tasks.delete(task);
+      task.f();
+    }
+  });
+  if (tasks.size !== 0)
+    raf(run_tasks);
+}
+function loop(callback) {
+  let task;
+  if (tasks.size === 0)
+    raf(run_tasks);
+  return {
+    promise: new Promise((fulfill) => {
+      tasks.add(task = { c: callback, f: fulfill });
+    }),
+    abort() {
+      tasks.delete(task);
+    }
+  };
 }
 function set_current_component(component) {
   current_component = component;
@@ -6164,9 +6389,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-24e326d0.js",
+      file: assets + "/_app/start-3365baac.js",
       css: [assets + "/_app/assets/start-464e9d0a.css"],
-      js: [assets + "/_app/start-24e326d0.js", assets + "/_app/chunks/vendor-dcb877ac.js"]
+      js: [assets + "/_app/start-3365baac.js", assets + "/_app/chunks/vendor-b474d02b.js"]
     },
     fetched: void 0,
     floc: false,
@@ -6209,9 +6434,9 @@ function render(request, {
   const host = request.headers["host"];
   return respond({ ...request, host }, options, { prerender });
 }
-var __accessCheck, __privateGet, __privateAdd, __privateSet, _map, chars, unsafeChars, reserved, escaped$1, objectProtoOwnPropertyNames, subscriber_queue, escape_json_string_in_html_dict, escape_html_attr_dict, s$1, s, absolute, ReadOnlyFormData, current_component, escaped, missing_component, on_destroy, css, Root, base, assets, user_hooks, template, options, default_settings, empty, manifest, get_hooks, module_lookup, metadata_lookup;
-var init_app_a4ffff8c = __esm({
-  ".svelte-kit/output/server/chunks/app-a4ffff8c.js"() {
+var __accessCheck, __privateGet, __privateAdd, __privateSet, _map, chars, unsafeChars, reserved, escaped$1, objectProtoOwnPropertyNames, subscriber_queue2, escape_json_string_in_html_dict, escape_html_attr_dict, s$1, s, absolute, ReadOnlyFormData, identity, is_client, now, raf, tasks, current_component, escaped, missing_component, on_destroy, css, Root, base, assets, user_hooks, template, options, default_settings, empty, manifest, get_hooks, module_lookup, metadata_lookup;
+var init_app_a55c7e88 = __esm({
+  ".svelte-kit/output/server/chunks/app-a55c7e88.js"() {
     init_shims();
     __accessCheck = (obj, member, msg) => {
       if (!member.has(obj))
@@ -6250,7 +6475,7 @@ var init_app_a4ffff8c = __esm({
     };
     objectProtoOwnPropertyNames = Object.getOwnPropertyNames(Object.prototype).sort().join("\0");
     Promise.resolve();
-    subscriber_queue = [];
+    subscriber_queue2 = [];
     escape_json_string_in_html_dict = {
       '"': '\\"',
       "<": "\\u003C",
@@ -6316,6 +6541,11 @@ var init_app_a4ffff8c = __esm({
       }
     };
     _map = new WeakMap();
+    identity = (x) => x;
+    is_client = typeof window !== "undefined";
+    now = is_client ? () => window.performance.now() : () => Date.now();
+    raf = is_client ? (cb) => requestAnimationFrame(cb) : noop;
+    tasks = new Set();
     Promise.resolve();
     escaped = {
       '"': "&quot;",
@@ -6398,11 +6628,11 @@ ${``}`;
       externalFetch: hooks.externalFetch || fetch
     });
     module_lookup = {
-      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_df754178(), layout_df754178_exports)),
-      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_a710f2c8(), error_a710f2c8_exports)),
-      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_2940db1e(), index_2940db1e_exports))
+      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_b72f77aa(), layout_b72f77aa_exports)),
+      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_2cd9ba61(), error_2cd9ba61_exports)),
+      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_b970bbd0(), index_b970bbd0_exports))
     };
-    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-b6039361.js", "css": ["assets/pages/__layout.svelte-4c3d7a42.css"], "js": ["pages/__layout.svelte-b6039361.js", "chunks/vendor-dcb877ac.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-63e92477.js", "css": [], "js": ["error.svelte-63e92477.js", "chunks/vendor-dcb877ac.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-9c47864c.js", "css": [], "js": ["pages/index.svelte-9c47864c.js", "chunks/vendor-dcb877ac.js"], "styles": [] } };
+    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-b7ca17a0.js", "css": ["assets/pages/__layout.svelte-b5d0f9e1.css"], "js": ["pages/__layout.svelte-b7ca17a0.js", "chunks/vendor-b474d02b.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-1e15cc41.js", "css": [], "js": ["error.svelte-1e15cc41.js", "chunks/vendor-b474d02b.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-c7e09e27.js", "css": [], "js": ["pages/index.svelte-c7e09e27.js", "chunks/vendor-b474d02b.js"], "styles": [] } };
   }
 });
 
@@ -6455,7 +6685,7 @@ function getRawBody(req) {
 
 // .svelte-kit/output/server/app.js
 init_shims();
-init_app_a4ffff8c();
+init_app_a55c7e88();
 
 // .svelte-kit/vercel/entry.js
 init();
