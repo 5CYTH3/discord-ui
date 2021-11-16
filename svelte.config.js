@@ -9,6 +9,8 @@ const config = {
   kit: {
     // hydrate the <div id="svelte"> element in src/app.html
     target: "#svelte",
+
+    // for vercel adapter
     adapter: vercel(),
 
     // for static adapter

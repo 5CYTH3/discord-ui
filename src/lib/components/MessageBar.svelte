@@ -3,6 +3,14 @@
 </script>
 
 <main class = "flex flex-col justify-end h-full">
-    <Message>HEYO</Message>
-    <Message>COMMENT CA VA</Message>
+    <Message>Hey !</Message>
+    <Message>This project is called Discord-ui, and it's made by me !</Message>
+    <Message>The goal of this project was to recreate the Discord UI using SvelteKit and TailwindCSS.</Message>
+    <Message>Of course, nothing is functional as it's only a frontend copy.</Message>
+    <Message>I hope you enjoy it !</Message>
+    <Message>
+        <div class="flex space-x-1">
+        <span>Here is a link to the github repository :</span> <a href="https://github.com/herbemalveillante/discord-ui" class="text-blue underline visited:text-purple-600">just click right here</a>
+        </div>
+    </Message>
 </main>
