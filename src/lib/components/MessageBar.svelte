@@ -2,6 +2,7 @@
     import Message from './Message.svelte'
 </script>
 
-<main class = "flex justify-center items-center h-full">
-    <Message/>
+<main class = "flex flex-col justify-end h-full">
+    <Message>HEYO</Message>
+    <Message>COMMENT CA VA</Message>
 </main>

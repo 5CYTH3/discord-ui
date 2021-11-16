@@ -4696,25 +4696,25 @@ var init_shims = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-b72f77aa.js
-var layout_b72f77aa_exports = {};
-__export(layout_b72f77aa_exports, {
+// .svelte-kit/output/server/chunks/__layout-17748127.js
+var layout_17748127_exports = {};
+__export(layout_17748127_exports, {
   default: () => _layout
 });
 var _layout;
-var init_layout_b72f77aa = __esm({
-  ".svelte-kit/output/server/chunks/__layout-b72f77aa.js"() {
+var init_layout_17748127 = __esm({
+  ".svelte-kit/output/server/chunks/__layout-17748127.js"() {
     init_shims();
-    init_app_a55c7e88();
+    init_app_055750d1();
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `${slots.default ? slots.default({}) : ``}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/error-2cd9ba61.js
-var error_2cd9ba61_exports = {};
-__export(error_2cd9ba61_exports, {
+// .svelte-kit/output/server/chunks/error-a356ae76.js
+var error_a356ae76_exports = {};
+__export(error_a356ae76_exports, {
   default: () => Error2,
   load: () => load
 });
@@ -4722,10 +4722,10 @@ function load({ error: error2, status }) {
   return { props: { error: error2, status } };
 }
 var Error2;
-var init_error_2cd9ba61 = __esm({
-  ".svelte-kit/output/server/chunks/error-2cd9ba61.js"() {
+var init_error_a356ae76 = __esm({
+  ".svelte-kit/output/server/chunks/error-a356ae76.js"() {
     init_shims();
-    init_app_a55c7e88();
+    init_app_055750d1();
     Error2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { status } = $$props;
       let { error: error2 } = $$props;
@@ -4745,9 +4745,9 @@ ${error2.stack ? `<pre>${escape(error2.stack)}</pre>` : ``}`;
   }
 });
 
-// .svelte-kit/output/server/chunks/index-b970bbd0.js
-var index_b970bbd0_exports = {};
-__export(index_b970bbd0_exports, {
+// .svelte-kit/output/server/chunks/index-5ec8d708.js
+var index_5ec8d708_exports = {};
+__export(index_5ec8d708_exports, {
   default: () => Routes
 });
 function writable(value, start = noop) {
@@ -4888,10 +4888,10 @@ function tweened(value, defaults = {}) {
   };
 }
 var subscriber_queue, Category, Channel, ChannelBar, Search, MemberBar, Message, MessageBar, MessageInput, Chat, ServerIcon, ServerBar, Routes;
-var init_index_b970bbd0 = __esm({
-  ".svelte-kit/output/server/chunks/index-b970bbd0.js"() {
+var init_index_5ec8d708 = __esm({
+  ".svelte-kit/output/server/chunks/index-5ec8d708.js"() {
     init_shims();
-    init_app_a55c7e88();
+    init_app_055750d1();
     subscriber_queue = [];
     Category = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let rotateValue;
@@ -4953,11 +4953,23 @@ var init_index_b970bbd0 = __esm({
 </main>`;
     });
     Message = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `<main>message
-</main>`;
+      let { author = "HerbeMalveillante" } = $$props;
+      let { profilepic = "https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png" } = $$props;
+      let { date = "Yersteday at 16:34" } = $$props;
+      if ($$props.author === void 0 && $$bindings.author && author !== void 0)
+        $$bindings.author(author);
+      if ($$props.profilepic === void 0 && $$bindings.profilepic && profilepic !== void 0)
+        $$bindings.profilepic(profilepic);
+      if ($$props.date === void 0 && $$bindings.date && date !== void 0)
+        $$bindings.date(date);
+      return `<main class="${"flex w-full hover:bg-dark2 group mb-2 mt-2 items-center"}"><img${add_attribute("src", profilepic, 0)} alt="${"profile pic"}" class="${"w-12 h-12 rounded-full mr-5 ml-5 mt-2 mb-2"}">
+    <div class="${"flex flex-col"}"><div class="${"flex items-end"}"><span class="${"mr-2 text-white"}">${escape(author)}</span>
+            <span class="${"text-darkgray text-sm"}">${escape(date)}</span></div>
+        ${slots.default ? slots.default({}) : ``}</div></main>`;
     });
     MessageBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `<main class="${"flex justify-center items-center h-full"}">${validate_component(Message, "Message").$$render($$result, {}, {}, {})}</main>`;
+      return `<main class="${"flex flex-col justify-end h-full"}">${validate_component(Message, "Message").$$render($$result, {}, {}, { default: () => `HEYO` })}
+    ${validate_component(Message, "Message").$$render($$result, {}, {}, { default: () => `COMMENT CA VA` })}</main>`;
     });
     MessageInput = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let messageInput = "";
@@ -5039,11 +5051,6 @@ var init_index_b970bbd0 = __esm({
         tooltip: "AzerZetsu"
       }, {}, {})}
         ${validate_component(ServerIcon, "ServerIcon").$$render($$result, {
-        value: "https://pbs.twimg.com/profile_images/1419217421857087492/bOe8CC81_400x400.jpg",
-        type: "image",
-        tooltip: "Frill12345"
-      }, {}, {})}
-        ${validate_component(ServerIcon, "ServerIcon").$$render($$result, {
         value: "https://pbs.twimg.com/profile_images/1409991778623754240/mgRKxbfF_400x400.jpg",
         type: "image",
         tooltip: "YannOTacos"
@@ -5078,7 +5085,7 @@ var init_index_b970bbd0 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/app-a55c7e88.js
+// .svelte-kit/output/server/chunks/app-055750d1.js
 function get_single_valued_header(headers, key) {
   const value = headers[key];
   if (Array.isArray(value)) {
@@ -6389,9 +6396,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-3365baac.js",
+      file: assets + "/_app/start-0220b7df.js",
       css: [assets + "/_app/assets/start-464e9d0a.css"],
-      js: [assets + "/_app/start-3365baac.js", assets + "/_app/chunks/vendor-b474d02b.js"]
+      js: [assets + "/_app/start-0220b7df.js", assets + "/_app/chunks/vendor-da803b06.js"]
     },
     fetched: void 0,
     floc: false,
@@ -6435,8 +6442,8 @@ function render(request, {
   return respond({ ...request, host }, options, { prerender });
 }
 var __accessCheck, __privateGet, __privateAdd, __privateSet, _map, chars, unsafeChars, reserved, escaped$1, objectProtoOwnPropertyNames, subscriber_queue2, escape_json_string_in_html_dict, escape_html_attr_dict, s$1, s, absolute, ReadOnlyFormData, identity, is_client, now, raf, tasks, current_component, escaped, missing_component, on_destroy, css, Root, base, assets, user_hooks, template, options, default_settings, empty, manifest, get_hooks, module_lookup, metadata_lookup;
-var init_app_a55c7e88 = __esm({
-  ".svelte-kit/output/server/chunks/app-a55c7e88.js"() {
+var init_app_055750d1 = __esm({
+  ".svelte-kit/output/server/chunks/app-055750d1.js"() {
     init_shims();
     __accessCheck = (obj, member, msg) => {
       if (!member.has(obj))
@@ -6628,11 +6635,11 @@ ${``}`;
       externalFetch: hooks.externalFetch || fetch
     });
     module_lookup = {
-      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_b72f77aa(), layout_b72f77aa_exports)),
-      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_2cd9ba61(), error_2cd9ba61_exports)),
-      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_b970bbd0(), index_b970bbd0_exports))
+      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_17748127(), layout_17748127_exports)),
+      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_a356ae76(), error_a356ae76_exports)),
+      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_5ec8d708(), index_5ec8d708_exports))
     };
-    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-b7ca17a0.js", "css": ["assets/pages/__layout.svelte-b5d0f9e1.css"], "js": ["pages/__layout.svelte-b7ca17a0.js", "chunks/vendor-b474d02b.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-1e15cc41.js", "css": [], "js": ["error.svelte-1e15cc41.js", "chunks/vendor-b474d02b.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-c7e09e27.js", "css": [], "js": ["pages/index.svelte-c7e09e27.js", "chunks/vendor-b474d02b.js"], "styles": [] } };
+    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-078dc40a.js", "css": ["assets/pages/__layout.svelte-bae7015d.css"], "js": ["pages/__layout.svelte-078dc40a.js", "chunks/vendor-da803b06.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-5995b456.js", "css": [], "js": ["error.svelte-5995b456.js", "chunks/vendor-da803b06.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-ee600557.js", "css": [], "js": ["pages/index.svelte-ee600557.js", "chunks/vendor-da803b06.js"], "styles": [] } };
   }
 });
 
@@ -6685,7 +6692,7 @@ function getRawBody(req) {
 
 // .svelte-kit/output/server/app.js
 init_shims();
-init_app_a55c7e88();
+init_app_055750d1();
 
 // .svelte-kit/vercel/entry.js
 init();
