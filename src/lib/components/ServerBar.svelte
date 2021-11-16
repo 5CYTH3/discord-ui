@@ -15,7 +15,6 @@
         <ServerIcon value="https://media.discordapp.net/attachments/905823342962040842/908407890921017375/cdd_back_2021.jpg" type="image" tooltip="Café des Devs"/>
         <ServerIcon value="https://pbs.twimg.com/profile_images/1222942571376209920/raMKhiHq_400x400.jpg" type="image" tooltip="Apex Legends"/>
         <ServerIcon value="https://pbs.twimg.com/profile_images/1459925091458985993/0vlsvQ2S_400x400.jpg" type="image" tooltip="AzerZetsu"/>
-        <ServerIcon value="https://pbs.twimg.com/profile_images/1419217421857087492/bOe8CC81_400x400.jpg" type="image" tooltip="Frill12345"/>
         <ServerIcon value="https://pbs.twimg.com/profile_images/1409991778623754240/mgRKxbfF_400x400.jpg" type="image" tooltip="YannOTacos"/>
         <ServerIcon value="https://pbs.twimg.com/profile_images/1444794309136502785/39GeJ97Q_400x400.jpg" type="image" tooltip="Skylanda"/>
         <ServerIcon value="https://pbs.twimg.com/profile_images/1080928807480147969/D3QyAya2_400x400.jpg" type="image" tooltip="SamSam"/>
