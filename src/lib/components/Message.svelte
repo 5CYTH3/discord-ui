@@ -3,6 +3,13 @@
     // export let profilepic = "https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png";
     export let profilepic = "https://pbs.twimg.com/profile_images/1457325731336409089/OwiA9ZMn_400x400.png";
     export let date = "Yersteday at 16:34";
+
+    let color;
+    if (author == "HerbeMalveillante") {
+        color = "blue";
+    } else {
+        color = "white";
+    }
 </script>
 
 
@@ -10,7 +17,11 @@
     <img src={profilepic} alt="profile pic" class="w-12 h-12 rounded-full mr-5 ml-5 mt-2 mb-2 cursor-pointer">
     <div class="flex flex-col">
         <div class="flex items-end">
-            <span class="mr-2 text-white cursor-pointer">{author}</span>
+            {#if color == "blue"}
+                <span class="mr-2 text-blue cursor-pointer">{author}</span>
+            {:else}
+                <span class="mr-2 text-white cursor-pointer">{author}</span>
+            {/if}
             <span class="text-darkgray text-sm">{date}</span>
         </div>
         <slot></slot>
