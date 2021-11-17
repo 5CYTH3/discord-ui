@@ -11,7 +11,7 @@
     <Message date = "Yersteday at 16:36">I hope you enjoy it !</Message>
     <Message date = "Yersteday at 16:37">
         <div class="flex space-x-1">
-        <span>Here is a link to the github repository :</span> <a href="https://github.com/herbemalveillante/discord-ui" class="text-blue underline visited:text-purple-600">just click right here</a>
+            <span>Here is a link to the github repository :</span> <a href="https://github.com/herbemalveillante/discord-ui" class="text-blue underline visited:text-purple-600">just click right here</a>
         </div>
     </Message>
     <Message date = "Yersteday at 16:39" author="John" profilepic = "https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png">👍</Message>
