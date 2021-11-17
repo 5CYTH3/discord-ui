@@ -1,5 +1,5 @@
 <script>
-    export let avatar="https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png";
+    export let avatar="https://previews.123rf.com/images/alphaspirit/alphaspirit1504/alphaspirit150400118/38665682-simple-young-man-face-smiling-and-optimistic.jpg";
     export let activity = "👍 Being Cool";
     export let color = "white";
 </script>
