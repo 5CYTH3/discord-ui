@@ -4696,25 +4696,25 @@ var init_shims = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-17748127.js
-var layout_17748127_exports = {};
-__export(layout_17748127_exports, {
+// .svelte-kit/output/server/chunks/__layout-bfd00e09.js
+var layout_bfd00e09_exports = {};
+__export(layout_bfd00e09_exports, {
   default: () => _layout
 });
 var _layout;
-var init_layout_17748127 = __esm({
-  ".svelte-kit/output/server/chunks/__layout-17748127.js"() {
+var init_layout_bfd00e09 = __esm({
+  ".svelte-kit/output/server/chunks/__layout-bfd00e09.js"() {
     init_shims();
-    init_app_055750d1();
+    init_app_68c70672();
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `${slots.default ? slots.default({}) : ``}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/error-a356ae76.js
-var error_a356ae76_exports = {};
-__export(error_a356ae76_exports, {
+// .svelte-kit/output/server/chunks/error-542573a3.js
+var error_542573a3_exports = {};
+__export(error_542573a3_exports, {
   default: () => Error2,
   load: () => load
 });
@@ -4722,10 +4722,10 @@ function load({ error: error2, status }) {
   return { props: { error: error2, status } };
 }
 var Error2;
-var init_error_a356ae76 = __esm({
-  ".svelte-kit/output/server/chunks/error-a356ae76.js"() {
+var init_error_542573a3 = __esm({
+  ".svelte-kit/output/server/chunks/error-542573a3.js"() {
     init_shims();
-    init_app_055750d1();
+    init_app_68c70672();
     Error2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { status } = $$props;
       let { error: error2 } = $$props;
@@ -4745,9 +4745,9 @@ ${error2.stack ? `<pre>${escape(error2.stack)}</pre>` : ``}`;
   }
 });
 
-// .svelte-kit/output/server/chunks/index-5ec8d708.js
-var index_5ec8d708_exports = {};
-__export(index_5ec8d708_exports, {
+// .svelte-kit/output/server/chunks/index-fe9bf41b.js
+var index_fe9bf41b_exports = {};
+__export(index_fe9bf41b_exports, {
   default: () => Routes
 });
 function writable(value, start = noop) {
@@ -4887,11 +4887,11 @@ function tweened(value, defaults = {}) {
     subscribe: store.subscribe
   };
 }
-var subscriber_queue, Category, Channel, ChannelBar, Search, MemberBar, Message, MessageBar, MessageInput, Chat, ServerIcon, ServerBar, Routes;
-var init_index_5ec8d708 = __esm({
-  ".svelte-kit/output/server/chunks/index-5ec8d708.js"() {
+var subscriber_queue, Category, Channel, ChannelBar, Search, Member, MemberCategory, MemberBar, Message, MessageBar, MessageInput, Chat, ServerIcon, ServerBar, Routes;
+var init_index_fe9bf41b = __esm({
+  ".svelte-kit/output/server/chunks/index-fe9bf41b.js"() {
     init_shims();
-    init_app_055750d1();
+    init_app_68c70672();
     subscriber_queue = [];
     Category = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let rotateValue;
@@ -4942,55 +4942,129 @@ var init_index_5ec8d708 = __esm({
             ${validate_component(Channel, "Channel").$$render($$result, { name: "javascript", type: "text" }, {}, {})}
             ${validate_component(Channel, "Channel").$$render($$result, { name: "python", type: "text" }, {}, {})}`
       })}</div>
-    <div class="${"flex h-auto w-full bg-dark1_5 text-white"}"><div class="${"m-3"}"><span>HerbeMalveillante</span></div></div></div>`;
+
+
+    <div class="${"flex h-auto w-full bg-dark1_5 text-white"}"><div class="${"flex m-3 w-full justify-between"}"><div class="${"relative"}"><img class="${"w-10 h-10"}" src="${"https://pbs.twimg.com/profile_images/1457325731336409089/OwiA9ZMn_400x400.png"}" alt="${"profile"}">
+                <div class="${"absolute w-2 h-2 bg-green rounded-full bottom-0 right-1"}"></div></div>
+            <div class="${"flex flex-col w-20 overflow-hidden group"}"><span>HerbeMalveillante</span>
+                <div class="${"h-4 relative overflow-hidden justify-start flex flex-col"}"><span class="${"absolute text-xs top-0 group-hover:-top-10 text-lightgray transition-all"}">\u{1FAC0} Coding</span>
+                    <span class="${"absolute text-xs top-10 group-hover:top-0 text-lightgray transition-all"}">#3259</span></div></div>
+            <div class="${"flex align-end items-center text-darkgray"}"><svg class="${"w-6 h-6 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"}" clip-rule="${"evenodd"}"></path></svg>
+                <svg class="${"w-6 h-6 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"}" clip-rule="${"evenodd"}"></path></svg>
+                <svg class="${"w-6 h-6 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"}" clip-rule="${"evenodd"}"></path></svg></div></div></div></div>`;
     });
     Search = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `<main class="${"flex bg-dark1 text-darkgray w-40 justify-between rounded items-center"}"><span class="${"ml-2"}">Search</span>
+      return `<main class="${"flex bg-dark1 text-darkgray w-40 justify-between rounded items-center cursor-text"}"><span class="${"ml-2"}">Search</span>
     <svg class="${"w-4 h-4 mr-2"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"}" cliprule="${"evenodd"}"></path></svg></main>`;
     });
+    Member = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { avatar = "https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png" } = $$props;
+      let { activity = "\u{1F44D} Being Cool" } = $$props;
+      let { color = "white" } = $$props;
+      if ($$props.avatar === void 0 && $$bindings.avatar && avatar !== void 0)
+        $$bindings.avatar(avatar);
+      if ($$props.activity === void 0 && $$bindings.activity && activity !== void 0)
+        $$bindings.activity(activity);
+      if ($$props.color === void 0 && $$bindings.color && color !== void 0)
+        $$bindings.color(color);
+      return `<main class="${"flex items-center w-auto hover:bg-dark4 p-2 m-1 rounded-md ml-2 mr-2"}"><img class="${"w-10 h-10 rounded-full ml-2 mr-4"}"${add_attribute("src", avatar, 0)} alt="${"avatar"}">
+    <div class="${"flex flex-col"}">${color == "blue" ? `<div class="${"text-blue"}">${slots.default ? slots.default({}) : ``}</div>` : `${color == "green" ? `<div class="${"text-green"}">${slots.default ? slots.default({}) : ``}</div>` : `<div class="${"text-white"}">${slots.default ? slots.default({}) : ``}</div>`}`}
+        <span class="${"text-xs text-lightgray font-bold"}">${escape(activity)}</span></div></main>`;
+    });
+    MemberCategory = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { count } = $$props;
+      if ($$props.count === void 0 && $$bindings.count && count !== void 0)
+        $$bindings.count(count);
+      return `<main class="${"flex mt-5 ml-2 text-lightgray"}">${slots.default ? slots.default({}) : ``}
+    <span class="${"ml-2 mr-2"}">-</span>
+    ${escape(count)}</main>`;
+    });
     MemberBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `<main class="${"flex h-full w-60 bg-dark2 justify-center items-center"}">Member bar
-</main>`;
+      return `<main class="${"flex flex-col h-full w-60 bg-dark2"}">${validate_component(MemberCategory, "MemberCategory").$$render($$result, { count: "2" }, {}, { default: () => `Admins` })}
+    ${validate_component(Member, "Member").$$render($$result, {
+        activity: "\u{1FAC0} Coding",
+        color: "blue",
+        avatar: "https://pbs.twimg.com/profile_images/1457325731336409089/OwiA9ZMn_400x400.png"
+      }, {}, { default: () => `HerbeMalveillante` })}
+    ${validate_component(Member, "Member").$$render($$result, {
+        color: "green",
+        avatar: "https://support.discord.com/hc/article_attachments/115000277491/wumpus_heart.png"
+      }, {}, { default: () => `Wumpus` })}
+    ${validate_component(MemberCategory, "MemberCategory").$$render($$result, { count: "1" }, {}, { default: () => `Members` })}
+    ${validate_component(Member, "Member").$$render($$result, { activity: "\u{1F9BE} Learning JavaScript" }, {}, { default: () => `John` })}</main>`;
     });
     Message = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { author = "HerbeMalveillante" } = $$props;
-      let { profilepic = "https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png" } = $$props;
+      let { profilepic = "https://pbs.twimg.com/profile_images/1457325731336409089/OwiA9ZMn_400x400.png" } = $$props;
       let { date = "Yersteday at 16:34" } = $$props;
+      let color;
+      if (author == "HerbeMalveillante") {
+        color = "blue";
+      } else {
+        color = "white";
+      }
       if ($$props.author === void 0 && $$bindings.author && author !== void 0)
         $$bindings.author(author);
       if ($$props.profilepic === void 0 && $$bindings.profilepic && profilepic !== void 0)
         $$bindings.profilepic(profilepic);
       if ($$props.date === void 0 && $$bindings.date && date !== void 0)
         $$bindings.date(date);
-      return `<main class="${"flex w-full hover:bg-dark2 group mb-2 mt-2 items-center"}"><img${add_attribute("src", profilepic, 0)} alt="${"profile pic"}" class="${"w-12 h-12 rounded-full mr-5 ml-5 mt-2 mb-2"}">
-    <div class="${"flex flex-col"}"><div class="${"flex items-end"}"><span class="${"mr-2 text-white"}">${escape(author)}</span>
+      return `<main class="${"flex relative w-full hover:bg-dark2 group mb-2 mt-2 items-center group overflow-visible"}"><img${add_attribute("src", profilepic, 0)} alt="${"profile pic"}" class="${"w-12 h-12 rounded-full mr-5 ml-5 mt-2 mb-2 cursor-pointer"}">
+    <div class="${"flex flex-col"}"><div class="${"flex items-end"}">${color == "blue" ? `<span class="${"mr-2 text-blue cursor-pointer"}">${escape(author)}</span>` : `<span class="${"mr-2 text-white cursor-pointer"}">${escape(author)}</span>`}
             <span class="${"text-darkgray text-sm"}">${escape(date)}</span></div>
-        ${slots.default ? slots.default({}) : ``}</div></main>`;
+        ${slots.default ? slots.default({}) : ``}</div>
+    <div class="${"flex text-lightgray space-x-2 absolute right-6 -top-3 scale-0 group-hover:scale-100 transition-all ease-linear bg-dark2 rounded-md shadow-md p-1"}"><svg class="${"w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"}" clip-rule="${"evenodd"}"></path></svg>
+        <svg class="${"w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
+        <svg class="${"w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"}" clip-rule="${"evenodd"}"></path></svg>
+        <svg class="${"w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"}"></path></svg></div></main>`;
     });
     MessageBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `<main class="${"flex flex-col justify-end h-full"}">${validate_component(Message, "Message").$$render($$result, {}, {}, { default: () => `HEYO` })}
-    ${validate_component(Message, "Message").$$render($$result, {}, {}, { default: () => `COMMENT CA VA` })}</main>`;
+      return `<main class="${"flex flex-col justify-end h-full"}">${validate_component(Message, "Message").$$render($$result, {}, {}, { default: () => `Hey !` })}
+    ${validate_component(Message, "Message").$$render($$result, {
+        author: "John",
+        profilepic: "https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png"
+      }, {}, { default: () => `\u{1F44B}` })}
+    ${validate_component(Message, "Message").$$render($$result, { date: "Yersteday at 16:35" }, {}, {
+        default: () => `This project is called Discord-ui, and it&#39;s made by me ! The goal of this project was to recreate the Discord UI using SvelteKit and TailwindCSS.`
+      })}
+    ${validate_component(Message, "Message").$$render($$result, {
+        date: "Yersteday at 16:35",
+        author: "John",
+        profilepic: "https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png"
+      }, {}, { default: () => `\u{1F92F}` })}
+    ${validate_component(Message, "Message").$$render($$result, { date: "Yersteday at 16:35" }, {}, {
+        default: () => `Of course, nothing is functional as it&#39;s only a frontend copy.`
+      })}
+    ${validate_component(Message, "Message").$$render($$result, { date: "Yersteday at 16:36" }, {}, { default: () => `I hope you enjoy it !` })}
+    ${validate_component(Message, "Message").$$render($$result, { date: "Yersteday at 16:37" }, {}, {
+        default: () => `<div class="${"flex space-x-1"}"><span>Here is a link to the github repository :</span> <a href="${"https://github.com/herbemalveillante/discord-ui"}" class="${"text-blue underline visited:text-purple-600"}">just click right here</a></div>`
+      })}
+    ${validate_component(Message, "Message").$$render($$result, {
+        date: "Yersteday at 16:39",
+        author: "John",
+        profilepic: "https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png"
+      }, {}, { default: () => `\u{1F44D}` })}</main>`;
     });
     MessageInput = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let messageInput = "";
-      return `<main class="${"flex items-center justify-center h-14 bg-chat rounded-xl m-4 mb-6 text-lightgray"}"><svg class="${"m-2 w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"}" clip-rule="${"evenodd"}"></path></svg>
-    <input class="${"bg-chat flex-1 m-2"}" placeholder="${"Send a message"}"${add_attribute("value", messageInput, 0)}>
-    <svg class="${"m-2 w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"}" clip-rule="${"evenodd"}"></path><path d="${"M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"}"></path></svg>
-    <svg class="${"m-2 w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"}"></path></svg>
-    <svg class="${"m-2 w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z"}" clip-rule="${"evenodd"}"></path></svg>
-    <svg class="${"m-2 w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"}" clip-rule="${"evenodd"}"></path></svg></main>`;
+      return `<main class="${"flex items-center justify-center h-14 bg-chat rounded-xl m-4 mb-6 text-lightgray"}"><svg class="${"m-2 w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"}" clip-rule="${"evenodd"}"></path></svg>
+    <input class="${"bg-chat flex-1 m-2 h-full"}" placeholder="${"Send a message"}"${add_attribute("value", messageInput, 0)}>
+    <svg class="${"m-2 w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"}" clip-rule="${"evenodd"}"></path><path d="${"M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"}"></path></svg>
+    <svg class="${"m-2 w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"}"></path></svg>
+    <svg class="${"m-2 w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z"}" clip-rule="${"evenodd"}"></path></svg>
+    <svg class="${"m-2 w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"}" clip-rule="${"evenodd"}"></path></svg></main>`;
     });
     Chat = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `<main class="${"flex flex-1 flex-col h-screen bg-dark3 text-white"}">
     <div class="${"flex h-14 w-full shadow border-b border-black items-center justify-between"}"><div class="${"flex text-lg font-medium ml-6 items-center"}"><svg class="${"w-6 h-6 mr-1.5 text-darkgray text-xl font-black"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M9.243 3.03a1 1 0 01.727 1.213L9.53 6h2.94l.56-2.243a1 1 0 111.94.486L14.53 6H17a1 1 0 110 2h-2.97l-1 4H15a1 1 0 110 2h-2.47l-.56 2.242a1 1 0 11-1.94-.485L10.47 14H7.53l-.56 2.242a1 1 0 11-1.94-.485L5.47 14H3a1 1 0 110-2h2.97l1-4H5a1 1 0 110-2h2.47l.56-2.243a1 1 0 011.213-.727zM9.03 8l-1 4h2.938l1-4H9.031z"}" cliprule="${"evenodd"}"></path></svg>
             <span>Medias</span></div>
-        <div class="${"mr-6 flex w-[28rem] justify-between text-lightgray"}"><svg class="${"w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"}"></path><path d="${"M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"}"></path></svg>
-            <svg class="${"w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"}"></path></svg>
-            <svg class="${"w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"}"></path></svg>
-            <svg class="${"w-7 h-7 text-white hover:text-gray-300 "}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"}"></path></svg>
+        <div class="${"mr-6 flex w-[28rem] justify-between text-lightgray"}"><svg class="${"w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"}"></path><path d="${"M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"}"></path></svg>
+            <svg class="${"w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"}"></path></svg>
+            <svg class="${"w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"}"></path></svg>
+            <svg class="${"w-7 h-7 text-white hover:text-gray-300 cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path d="${"M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"}"></path></svg>
             ${validate_component(Search, "Search").$$render($$result, {}, {}, {})}
-            <svg class="${"w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z"}" cliprule="${"evenodd"}"></path></svg>
-            <svg class="${"w-7 h-7 hover:text-white"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"}" clip-rule="${"evenodd"}"></path></svg></div></div>
+            <svg class="${"w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fillrule="${"evenodd"}" d="${"M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z"}" cliprule="${"evenodd"}"></path></svg>
+            <svg class="${"w-7 h-7 hover:text-white cursor-pointer"}" fill="${"currentColor"}" viewBox="${"0 0 20 20"}" xmlns="${"http://www.w3.org/2000/svg"}"><path fill-rule="${"evenodd"}" d="${"M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"}" clip-rule="${"evenodd"}"></path></svg></div></div>
 
     
     <div class="${"flex h-full"}"><div class="${"flex flex-1 flex-col h-full justify-between"}">${validate_component(MessageBar, "MessageBar").$$render($$result, {}, {}, {})}
@@ -5013,7 +5087,7 @@ var init_index_5ec8d708 = __esm({
         $$bindings.value(value);
       if ($$props.tooltip === void 0 && $$bindings.tooltip && tooltip !== void 0)
         $$bindings.tooltip(tooltip);
-      return `<div class="${"rounded-[2em] w-14 h-14 flex-shrink-0 text-center bg-dark3 m-2 text-4xl text-bold text-green hover:rounded-2xl transition-all hover:bg-green hover:text-white group"}"><div class="${"absolute bg-white w-1 h-8 left-0 mt-3 rounded-r scale-0 group-hover:scale-100 transition-all"}"></div>
+      return `<div class="${"rounded-[2em] w-14 h-14 flex-shrink-0 text-center bg-dark3 m-2 text-4xl text-bold text-green hover:rounded-2xl transition-all hover:bg-green hover:text-white group cursor-pointer"}"><div class="${"absolute bg-white w-1 h-8 left-0 mt-3 rounded-r scale-0 group-hover:scale-100 transition-all"}"></div>
     <div class="${"absolute bg-black left-[85px] mt-2 scale-0 group-hover:scale-100 transition-all text-xl text-white p-2 rounded-xl"}">${escape(tooltip)}</div>
 
     ${type == "icon" || type == "image" ? `<img class="${"rounded-[2em] hover:rounded-2xl hover:bg-green transition-all"}"${add_attribute("src", filename, 0)}${add_attribute("alt", tooltip, 0)}>` : `${type == "text" ? `<span class="${"flex justify-center items-center text-center"}">${escape(value)}</span>` : ``}`}</div>`;
@@ -5085,7 +5159,7 @@ var init_index_5ec8d708 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/app-055750d1.js
+// .svelte-kit/output/server/chunks/app-68c70672.js
 function get_single_valued_header(headers, key) {
   const value = headers[key];
   if (Array.isArray(value)) {
@@ -6396,9 +6470,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-0220b7df.js",
+      file: assets + "/_app/start-efc320b9.js",
       css: [assets + "/_app/assets/start-464e9d0a.css"],
-      js: [assets + "/_app/start-0220b7df.js", assets + "/_app/chunks/vendor-da803b06.js"]
+      js: [assets + "/_app/start-efc320b9.js", assets + "/_app/chunks/vendor-da803b06.js"]
     },
     fetched: void 0,
     floc: false,
@@ -6442,8 +6516,8 @@ function render(request, {
   return respond({ ...request, host }, options, { prerender });
 }
 var __accessCheck, __privateGet, __privateAdd, __privateSet, _map, chars, unsafeChars, reserved, escaped$1, objectProtoOwnPropertyNames, subscriber_queue2, escape_json_string_in_html_dict, escape_html_attr_dict, s$1, s, absolute, ReadOnlyFormData, identity, is_client, now, raf, tasks, current_component, escaped, missing_component, on_destroy, css, Root, base, assets, user_hooks, template, options, default_settings, empty, manifest, get_hooks, module_lookup, metadata_lookup;
-var init_app_055750d1 = __esm({
-  ".svelte-kit/output/server/chunks/app-055750d1.js"() {
+var init_app_68c70672 = __esm({
+  ".svelte-kit/output/server/chunks/app-68c70672.js"() {
     init_shims();
     __accessCheck = (obj, member, msg) => {
       if (!member.has(obj))
@@ -6635,11 +6709,11 @@ ${``}`;
       externalFetch: hooks.externalFetch || fetch
     });
     module_lookup = {
-      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_17748127(), layout_17748127_exports)),
-      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_a356ae76(), error_a356ae76_exports)),
-      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_5ec8d708(), index_5ec8d708_exports))
+      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_bfd00e09(), layout_bfd00e09_exports)),
+      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_542573a3(), error_542573a3_exports)),
+      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_fe9bf41b(), index_fe9bf41b_exports))
     };
-    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-078dc40a.js", "css": ["assets/pages/__layout.svelte-bae7015d.css"], "js": ["pages/__layout.svelte-078dc40a.js", "chunks/vendor-da803b06.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-5995b456.js", "css": [], "js": ["error.svelte-5995b456.js", "chunks/vendor-da803b06.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-ee600557.js", "css": [], "js": ["pages/index.svelte-ee600557.js", "chunks/vendor-da803b06.js"], "styles": [] } };
+    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-078dc40a.js", "css": ["assets/pages/__layout.svelte-6fa4bb93.css"], "js": ["pages/__layout.svelte-078dc40a.js", "chunks/vendor-da803b06.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-5995b456.js", "css": [], "js": ["error.svelte-5995b456.js", "chunks/vendor-da803b06.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-0cdf64c2.js", "css": [], "js": ["pages/index.svelte-0cdf64c2.js", "chunks/vendor-da803b06.js"], "styles": [] } };
   }
 });
 
@@ -6692,7 +6766,7 @@ function getRawBody(req) {
 
 // .svelte-kit/output/server/app.js
 init_shims();
-init_app_055750d1();
+init_app_68c70672();
 
 // .svelte-kit/vercel/entry.js
 init();
